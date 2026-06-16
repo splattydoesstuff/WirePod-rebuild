@@ -18,7 +18,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/widget"
-	cross_win "github.com/splattydoesstuff/WirePod-rebuild/cross/win"
+	cross_win "github.com/kercre123/WirePod/cross/win"
 	"github.com/ncruces/zenity"
 )
 
