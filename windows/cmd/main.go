@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/splattydoesstuff/WirePod-rebuild/cross/podapp"
-	cross_win "github.com/splattydoesstuff/WirePod-rebuild/cross/win"
+	"github.com/kercre123/WirePod/cross/podapp"
+	cross_win "github.com/kercre123/WirePod/cross/win"
 )
 
 func main() {
