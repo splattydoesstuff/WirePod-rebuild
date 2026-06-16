@@ -5,6 +5,10 @@ concurrency:
   cancel-in-progress: true
 
 on:
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+  repository_dispatch: # Listens for a webhook trigger from the submodule repository
+    types:
+      - submodule-updated
   push:
     branches:
       - 'main'
@@ -24,6 +28,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Update submodule to latest remote commit (Manual & Dispatch)
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+        run: git submodule update --remote wire-pod
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
@@ -74,6 +81,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Update submodule to latest remote commit (Manual & Dispatch)
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+        run: git submodule update --remote wire-pod
       - name: Setup Go
         uses: actions/setup-go@v5
         with:

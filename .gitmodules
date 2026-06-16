@@ -1,3 +1,3 @@
-[submodule "wire-pod"]
-	path = wire-pod-rebuild
+[submodule "wire-pod-rebuild"]
+	path = wire-pod
 	url = https://github.com/splattydoesstuff/wire-pod-rebuild
