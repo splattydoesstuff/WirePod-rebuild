@@ -1,4 +1,4 @@
-# WirePod
+# WirePod for rebuild
 
 Cross-platform code, resources, and builds for [wire-pod](https://github.com/kercre123/wire-pod).
 
