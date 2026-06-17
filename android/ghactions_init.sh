@@ -2,6 +2,9 @@
 
 echo "$ANDROID_KEY" | base64 -d > key/ks.jks
 echo "$ANDROID_PASSWD" | base64 -d > key/passwd
+# DEBUG
+echo "Length of ANDROID_KEY string: ${#ANDROID_KEY}"
+ls -lh key/ks.jks
 
 if [[ ! -d android-ndk ]]; then
     echo "Getting ndk..."
