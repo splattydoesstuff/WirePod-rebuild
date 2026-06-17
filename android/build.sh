@@ -100,7 +100,7 @@ cp ../built-libs/armv7/lib/libvosk.so lib/armeabi-v7a/
 cp ../libWirePod-armv7.so lib/armeabi-v7a/libWirePod.so
 cp ../libWirePod-arm64.so lib/arm64-v8a/libWirePod.so
 zip -r WirePod.apk lib
-${APKSIGNER} sign --ks ../key/ks.jks --ks-pass pass:"$(cat ../key/passwd)" --out ../WirePod.apk WirePod.apk
+${APKSIGNER} sign --ks-type jks --ks ../key/ks.jks --ks-pass pass:"$(cat ../key/passwd)" --out ../WirePod.apk WirePod.apk
 cd ..
 rm -rf tmp
 rm -f libWirePod-armv7.so
