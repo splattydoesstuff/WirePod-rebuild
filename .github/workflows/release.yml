@@ -118,7 +118,7 @@ jobs:
       - name: Build Android APK
         env:
           GHACTIONS: "true"
-          # Provide the secrets directly to the step that executes apksigner / gradle
+          # Provide the secrets directly to the signer
           ANDROID_KEY: "${{ secrets.ANDROID_KEY }}"
           ANDROID_PASSWD: "${{ secrets.ANDROID_PASSWD }}"
         run: cd android && ./build.sh ${{ github.ref_name }}
