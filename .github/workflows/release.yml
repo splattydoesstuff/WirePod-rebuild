@@ -113,14 +113,14 @@ jobs:
             wirepod_armhf-${{ github.ref_name }}.deb
             wirepod_arm64-${{ github.ref_name }}.deb
       - name: Setup Android build environment
-        env:
-          ANDROID_KEY: "${{ secrets.ANDROID_KEY }}"
-          ANDROID_PASSWD: "${{ secrets.ANDROID_PASSWD }}"
         run: |
           cd android && ./ghactions_init.sh
       - name: Build Android APK
         env:
           GHACTIONS: "true"
+          # Provide the secrets directly to the step that executes apksigner / gradle
+          ANDROID_KEY: "${{ secrets.ANDROID_KEY }}"
+          ANDROID_PASSWD: "${{ secrets.ANDROID_PASSWD }}"
         run: cd android && ./build.sh ${{ github.ref_name }}
       - name: Copy final .apk to working directory
         run: |
